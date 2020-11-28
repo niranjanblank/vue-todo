@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <v-app  >
+    <div class="grey lighten-4 app_main">
+    <nav-bar/>
+    <v-main class="grey lighten-4 mx-4 mb-4">
+      
+      <!-- <HelloWorld/> -->
+      <router-view></router-view>
+    </v-main>
     </div>
-    <router-view/>
-  </div>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
-}
+import navbar from './components/navbar'
+export default {
+  name: 'App',
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  components: {
+    "nav-bar":navbar
+    
+  },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  data: () => ({
+    //
+  }),
+};
+</script>
+<style scoped>
+.app_main{
+  height: 100%;
+  width: 100%;
 }
 </style>
